@@ -31,7 +31,7 @@ public class SliderAdapter extends PagerAdapter {
 
     private LayoutInflater layoutInflater;
     private AdapterView.OnItemClickListener itemClickListener;
-    private List<Slide> items = new ArrayList<>();
+    private List<Slide> items;
 
     public SliderAdapter(@NonNull Context context, List<Slide> items, AdapterView.OnItemClickListener itemClickListener) {
         this.items = items;
@@ -45,7 +45,7 @@ public class SliderAdapter extends PagerAdapter {
     }
 
     @Override
-    public boolean isViewFromObject(View view, Object object) {
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         // The object returned by instantiateItem() is a key/identifier. This method checks whether
         // the View passed to it (representing the page) is associated with that key or not.
         // It is required by a PagerAdapter to function properly.
@@ -53,9 +53,9 @@ public class SliderAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, final int position) {
+    public Object instantiateItem(@NonNull ViewGroup container, final int position) {
         View view = layoutInflater.inflate(R.layout.row_slider, container, false);
-        ImageView sliderImage = (ImageView) view.findViewById(R.id.sliderImage);
+        ImageView sliderImage = view.findViewById(R.id.sliderImage);
         loadImage(sliderImage, items.get(position).getImageUrl(), items.get(position).getImageCorner());
         View parent = view.findViewById(R.id.ripple);
         parent.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +70,7 @@ public class SliderAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         // Removes the page from the container for the given position. We simply removed object using removeView()
         // but could’ve also used removeViewAt() by passing it the position.
         try {

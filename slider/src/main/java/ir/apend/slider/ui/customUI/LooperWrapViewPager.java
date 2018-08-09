@@ -117,8 +117,6 @@ public class LooperWrapViewPager extends ViewPager {
         mOuterPageChangeListener = listener;
     }
 
-    ;
-
     public LooperWrapViewPager(Context context) {
         super(context);
         init();
