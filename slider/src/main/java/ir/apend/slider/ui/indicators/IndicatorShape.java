@@ -13,16 +13,14 @@ import ir.apend.sliderlibrary.R;
  * @since 11/26/16
  */
 public abstract class IndicatorShape extends android.support.v7.widget.AppCompatImageView {
-    private boolean isChecked = false;
-    private int indicatorSize;
-    private boolean mustAnimateChange;
-
     public static final int CIRCLE = 0;
     public static final int SQUARE = 1;
     public static final int ROUND_SQUARE = 2;
     public static final int DASH = 3;
-
     private static final int ANIMATION_DURATION = 150;
+    private boolean isChecked = false;
+    private int indicatorSize;
+    private boolean mustAnimateChange;
 
     public IndicatorShape(Context context, int indicatorSize, boolean mustAnimateChange) {
         super(context);
@@ -51,7 +49,7 @@ public abstract class IndicatorShape extends android.support.v7.widget.AppCompat
                 } else {
                     descale();
                 }
-            }else {
+            } else {
                 if (isChecked) {
                     scale(0);
                 } else {
@@ -85,8 +83,8 @@ public abstract class IndicatorShape extends android.support.v7.widget.AppCompat
         startAnimation(scaleAnimation);
     }
 
-    public void setMustAnimateChange(boolean mustAnimateChange){
-        this.mustAnimateChange=mustAnimateChange;
+    public void setMustAnimateChange(boolean mustAnimateChange) {
+        this.mustAnimateChange = mustAnimateChange;
     }
 
 

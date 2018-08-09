@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import ir.apend.slider.model.Slide;
@@ -86,7 +85,7 @@ public class SliderAdapter extends PagerAdapter {
     /**
      * Display the gallery image into the image view provided.
      */
-    private void loadImage(ImageView imageView, String url,int corner) {
+    private void loadImage(ImageView imageView, String url, int corner) {
         if (!TextUtils.isEmpty(url)) {
             Glide.with(imageView.getContext()) // Bind it with the context of the actual view used
                     .load(url) // Load the image

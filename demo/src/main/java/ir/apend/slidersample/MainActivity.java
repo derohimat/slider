@@ -34,5 +34,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         slider.addSlides(slideList);
+        slider.onPageSelected(0);
     }
 }

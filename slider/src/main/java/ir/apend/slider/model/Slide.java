@@ -8,13 +8,13 @@ import java.io.Serializable;
  * farzad.farazmand@gmail.com
  */
 
-public class Slide implements Serializable{
+public class Slide implements Serializable {
 
     private int id;
     private String imageUrl;
     private int imageCorner;
 
-    public Slide(int id, String imageUrl,int imageCorner) {
+    public Slide(int id, String imageUrl, int imageCorner) {
         this.id = id;
         this.imageUrl = imageUrl;
         this.imageCorner = imageCorner;
@@ -24,12 +24,12 @@ public class Slide implements Serializable{
         return id;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
